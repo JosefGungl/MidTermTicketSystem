@@ -10,11 +10,12 @@ namespace MidTermTicketSystem
 
         static void Main(string[] args)
         {
-            string ticketFilePath = Directory.GetCurrentDirectory() + "\\tickets.csv";
-
-            TicketFile ticketFile = new TicketFile(ticketFilePath);
+            string bugFile = Directory.GetCurrentDirectory() + "\\tickets.csv";
+            string enhancementFile = Directory.GetCurrentDirectory() + "\\Enhancements.csv";
+            string taskFile = Directory.GetCurrentDirectory() + "\\Task.csv";
 
             string choice = "";
+            string choice2 ="";
             do{
                 Console.WriteLine("1. Create a ticket");
                 Console.WriteLine("2. Display all tickets");
@@ -24,29 +25,137 @@ namespace MidTermTicketSystem
 
 
                 if (choice == "1"){
-                    //add ticket
-                    Ticket ticket = new Ticket();
-                    Console.WriteLine("What is the tickets ID?");
-                        ticket.id = Console.ReadLine();
-                        Console.WriteLine("A short ticket summary please.");
-                        ticket.summary = Console.ReadLine();
-                        Console.WriteLine("What is the tickets status?");
-                        ticket.status = Console.ReadLine();
-                        Console.WriteLine("What is the priority level of the ticket?");
-                        ticket.priority = Console.ReadLine();
-                        Console.WriteLine("Who submitted the ticket?");
-                        ticket.submitter = Console.ReadLine();
-                        Console.WriteLine("Who was assigned the ticket?");
-                        ticket.assigned = Console.ReadLine();
-                        Console.WriteLine("Who is watching the ticket?");
-                        ticket.watcher = Console.ReadLine();
+                    Console.WriteLine("1. Bug/Defect");
+                    Console.WriteLine("2. Enhancement");
+                    Console.WriteLine("3. Task");
+                    choice2 = Console.ReadLine();
+                    Console.WriteLine("");
 
-                        ticketFile.AddTicket(ticket);
+                    if (choice2 == "1"){
+                        Console.WriteLine("What is the tickets ID?");
+                        string ID = Console.ReadLine();
+                        Console.WriteLine("A short ticket summary please.");
+                        string summary = Console.ReadLine();
+                        Console.WriteLine("What is the tickets status?");
+                        string status = Console.ReadLine();
+                        Console.WriteLine("What is the priority level of the ticket?");
+                        string priority = Console.ReadLine();
+                        Console.WriteLine("Who submitted the ticket?");
+                        string submitter = Console.ReadLine();
+                        Console.WriteLine("Who was assigned the ticket?");
+                        string assigned = Console.ReadLine();
+                        Console.WriteLine("Who is watching the ticket?");
+                        string watcher = Console.ReadLine();
+                        Console.WriteLine("What is the severity?");
+                        string severity = Console.ReadLine();
+                        string tempTicket = ID+", "+ summary+", "+status+", "+priority+", "+submitter+", "+assigned+", "+watcher+", "+severity;
+                        Ticket Bug = new BugTicket {
+                            id = ID,
+                            summary = summary,
+                            status =  status,
+                            priority = priority,
+                            submitter = submitter,
+                            assigned = assigned,
+                            watcher = watcher,
+                            severity = severity,
+
+                        };
+                        using (StreamWriter sw = File.AppendText(bugFile)){
+                            sw.WriteLine();
+                            sw.WriteLine(tempTicket);
+                        }
+                    }
+
+                    else if (choice2 == "2"){
+                        Console.WriteLine("What is the tickets ID?");
+                        string ID = Console.ReadLine();
+                        Console.WriteLine("A short ticket summary please.");
+                        string summary = Console.ReadLine();
+                        Console.WriteLine("What is the tickets status?");
+                        string status = Console.ReadLine();
+                        Console.WriteLine("What is the priority level of the ticket?");
+                        string priority = Console.ReadLine();
+                        Console.WriteLine("Who submitted the ticket?");
+                        string submitter = Console.ReadLine();
+                        Console.WriteLine("Who was assigned the ticket?");
+                        string assigned = Console.ReadLine();
+                        Console.WriteLine("Who is watching the ticket?");
+                        string watcher = Console.ReadLine();
+                        Console.WriteLine("What is the software?");
+                        string software = Console.ReadLine();
+                        Console.WriteLine("What is the cost?");
+                        string cost = Console.ReadLine();
+                        Console.WriteLine("What is the reason?");
+                        string reason = Console.ReadLine();
+                        Console.WriteLine("What is the estimate?");
+                        string estimate = Console.ReadLine();
+                        string tempTicket = ID+", "+ summary+", "+status+", "+priority+", "+submitter+", "+assigned+", "+watcher+", "+software+", "+cost+", "+reason+", "+estimate;
+                        Ticket Enhancement = new Enhancements {
+                            id = ID,
+                            summary = summary,
+                            status =  status,
+                            priority = priority,
+                            submitter = submitter,
+                            assigned = assigned,
+                            watcher = watcher,
+                            software = software,
+                            cost =  cost,
+                            reason = reason,
+                            estimate = estimate,
+                        };
+                        using (StreamWriter sw = File.AppendText(enhancementFile)){
+                            sw.WriteLine();
+                            sw.WriteLine(tempTicket);
+                        }
+                    }
+                    else if (choice2 == "3"){
+                        Console.WriteLine("What is the tickets ID?");
+                        string ID = Console.ReadLine();
+                        Console.WriteLine("A short ticket summary please.");
+                        string summary = Console.ReadLine();
+                        Console.WriteLine("What is the tickets status?");
+                        string status = Console.ReadLine();
+                        Console.WriteLine("What is the priority level of the ticket?");
+                        string priority = Console.ReadLine();
+                        Console.WriteLine("Who submitted the ticket?");
+                        string submitter = Console.ReadLine();
+                        Console.WriteLine("Who was assigned the ticket?");
+                        string assigned = Console.ReadLine();
+                        Console.WriteLine("Who is watching the ticket?");
+                        string watcher = Console.ReadLine();
+                        Console.WriteLine("What is the project name?");
+                        string name = Console.ReadLine();
+                        Console.WriteLine("What is the due date?");
+                        string dueDate = Console.ReadLine();
+                        string tempTicket = ID+", "+ summary+", "+status+", "+priority+", "+submitter+", "+assigned+", "+watcher+", "+name+", "+dueDate;
+                        Ticket task = new Task {
+                            id = ID,
+                            summary = summary,
+                            status =  status,
+                            priority = priority,
+                            submitter = submitter,
+                            assigned = assigned,
+                            watcher = watcher,
+                            name = name,
+                            dueDate = dueDate,
+                        };
+                        using (StreamWriter sw = File.AppendText(taskFile)){
+                            sw.WriteLine();
+                            sw.WriteLine(tempTicket);
+                        }
+                    }
+                    
                 }else if (choice == "2"){
                     //display all tickets
-                    foreach(Ticket t in ticketFile.Tickets){
-                        Console.WriteLine(t.Display());
-                    }
+                    string ticket = File.ReadAllText("Tickets.csv");
+                    string enhance = File.ReadAllText("Enhancements.csv");
+                    string task = File.ReadAllText("Task.csv");
+                    Console.WriteLine("Bugs:");
+                    Console.WriteLine(ticket);
+                    Console.WriteLine("Enhancements:");
+                    Console.WriteLine(enhance);
+                    Console.WriteLine("Tasks:");
+                    Console.WriteLine(task);
                 }
 
 

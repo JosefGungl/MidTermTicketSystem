@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MidTermTicketSystem
 {
-    public class Ticket
+    public abstract class Ticket
     {
         public string id { get; set; }
         public string summary { get; set; }
@@ -11,10 +11,20 @@ namespace MidTermTicketSystem
         public string priority { get; set; }
         public string submitter { get; set; }
         public string assigned { get; set; }
-        public string watcher { get; set; }
-
-        public string Display(){
-            return $"{id}, {summary}, {status}, {priority}, {submitter}, {assigned}, {watcher} \n";
-        }
+        public string watcher { get; set; } 
     }
+    public class BugTicket:Ticket{
+        public string severity{ get; set; }
+    }
+    public class Enhancements:Ticket{
+        public string software{ get; set;}
+        public string cost{ get; set;}
+        public string reason{ get; set;}
+        public string estimate{ get; set;}
+    }
+    public class Task:Ticket{
+        public string name{ get; set;}
+        public string dueDate{ get; set;}
+    }
+
 }

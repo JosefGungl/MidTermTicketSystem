@@ -1,0 +1,16 @@
+E:\VSC\c++\repos\MidTermTicketSystem\bin\Debug\net5.0\MidTermTicketSystem.exe
+E:\VSC\c++\repos\MidTermTicketSystem\bin\Debug\net5.0\MidTermTicketSystem.deps.json
+E:\VSC\c++\repos\MidTermTicketSystem\bin\Debug\net5.0\MidTermTicketSystem.runtimeconfig.json
+E:\VSC\c++\repos\MidTermTicketSystem\bin\Debug\net5.0\MidTermTicketSystem.runtimeconfig.dev.json
+E:\VSC\c++\repos\MidTermTicketSystem\bin\Debug\net5.0\MidTermTicketSystem.dll
+E:\VSC\c++\repos\MidTermTicketSystem\bin\Debug\net5.0\ref\MidTermTicketSystem.dll
+E:\VSC\c++\repos\MidTermTicketSystem\bin\Debug\net5.0\MidTermTicketSystem.pdb
+E:\VSC\c++\repos\MidTermTicketSystem\obj\Debug\net5.0\MidTermTicketSystem.csproj.AssemblyReference.cache
+E:\VSC\c++\repos\MidTermTicketSystem\obj\Debug\net5.0\MidTermTicketSystem.GeneratedMSBuildEditorConfig.editorconfig
+E:\VSC\c++\repos\MidTermTicketSystem\obj\Debug\net5.0\MidTermTicketSystem.AssemblyInfoInputs.cache
+E:\VSC\c++\repos\MidTermTicketSystem\obj\Debug\net5.0\MidTermTicketSystem.AssemblyInfo.cs
+E:\VSC\c++\repos\MidTermTicketSystem\obj\Debug\net5.0\MidTermTicketSystem.csproj.CoreCompileInputs.cache
+E:\VSC\c++\repos\MidTermTicketSystem\obj\Debug\net5.0\MidTermTicketSystem.dll
+E:\VSC\c++\repos\MidTermTicketSystem\obj\Debug\net5.0\ref\MidTermTicketSystem.dll
+E:\VSC\c++\repos\MidTermTicketSystem\obj\Debug\net5.0\MidTermTicketSystem.pdb
+E:\VSC\c++\repos\MidTermTicketSystem\obj\Debug\net5.0\MidTermTicketSystem.genruntimeconfig.cache
