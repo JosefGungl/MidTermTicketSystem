@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MidTermTicketSystem
 {
@@ -19,7 +20,8 @@ namespace MidTermTicketSystem
             do{
                 Console.WriteLine("1. Create a ticket");
                 Console.WriteLine("2. Display all tickets");
-                Console.WriteLine("3. Anything else to quit");
+                Console.WriteLine("3. Search for ticket");
+                Console.WriteLine("Anything else to quit");
                 choice = Console.ReadLine();
                 Console.WriteLine("");
 
@@ -156,10 +158,35 @@ namespace MidTermTicketSystem
                     Console.WriteLine(enhance);
                     Console.WriteLine("Tasks:");
                     Console.WriteLine(task);
+                }else if(choice == "3"){
+                    //Find a ticket
+                    string choice3 ="";
+                    do{
+                        Console.WriteLine("Select what to search by");
+                        Console.WriteLine("1. Status");
+                        Console.WriteLine("2. Priority");
+                        Console.WriteLine("3. Submitter");
+                        choice2 = Console.ReadLine();
+                        if (choice2 == "1"){
+                            Console.Write("Search Status: ");
+                            string find = Console.ReadLine();
+                            Console.WriteLine("");
+                            
+                        }else if(choice2 == "2"){
+                            Console.Write("Search Priority: ");
+                            string find = Console.ReadLine();
+                            Console.WriteLine("");
+
+                        }else if (choice2 == "3"){
+                            Console.Write("Search Submitter: ");
+                            string find = Console.ReadLine();
+                            Console.WriteLine("");
+
+                        }
+                    }while(choice3 =="1" || choice3 == "2" || choice3 == "3");
                 }
 
-
-            } while (choice =="1" || choice == "2");
+            } while (choice =="1" || choice == "2" || choice == "3");
 
         }
     }

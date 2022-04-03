@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 namespace MidTermTicketSystem
 {
-    public abstract class Ticket
+    public class Ticket
     {
         public string id { get; set; }
         public string summary { get; set; }
@@ -26,5 +28,6 @@ namespace MidTermTicketSystem
         public string name{ get; set;}
         public string dueDate{ get; set;}
     }
+    
 
 }
